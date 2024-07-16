@@ -20,7 +20,7 @@ A weather application that shows weather details for any location using various 
 
 ## Installation
  - Clone the repository:
-- Step 1. git clone https://github.com/your-username/weather-application.git
+- Step 1. git clone https://github.com/chsatyam09/Wheather_Application.git
 - Step 2.Open the project in Android Studio.
 - Step 3.Build the project to download all the dependencies.
 - Step 4.Run the application on an Android device or emulator.
