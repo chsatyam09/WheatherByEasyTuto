@@ -11,11 +11,17 @@ import com.placement.wheatherbyeasytuto.Api.WeatherModel
 import kotlinx.coroutines.launch
 
 
+
 class WeatherViewModel  : ViewModel() {
     private val weatherApi = RetrofitInstance.weatherApi
     private val _weatherResult = MutableLiveData<NetworkResponse<WeatherModel>>()
-     val weatherResult : LiveData<NetworkResponse<WeatherModel>> = _weatherResult
+    val weatherResult: LiveData<NetworkResponse<WeatherModel>> = _weatherResult
+
+
+
+
     fun getData(city: String) {
+
         _weatherResult.value = NetworkResponse.Loading
 
         viewModelScope.launch {
@@ -31,15 +37,16 @@ class WeatherViewModel  : ViewModel() {
                 else {
                     _weatherResult.value = NetworkResponse.Error("Failed to load data")
                 }
-            } // try
+            }
             catch (e : Exception){
                 _weatherResult.value = NetworkResponse.Error("Failed to load data")
             }
 
-        } //viewModelScope.launch
+        }
 
     }
 }
+
 
 
 
